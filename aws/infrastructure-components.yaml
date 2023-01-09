@@ -11257,8 +11257,8 @@ spec:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  annotations:
-    ${AWS_CONTROLLER_IAM_ROLE/#arn/eks.amazonaws.com/role-arn: arn}
+  # annotations:
+  #   ${AWS_CONTROLLER_IAM_ROLE/#arn/eks.amazonaws.com/role-arn: arn}
   labels:
     cluster.x-k8s.io/provider: infrastructure-aws
     control-plane: controller-manager
@@ -11736,8 +11736,8 @@ spec:
       - args:
         - --leader-elect
         - --feature-gates=EKS=true,EKSEnableIAM=false,EKSAllowAddRoles=false,EKSFargate=false,MachinePool=false,EventBridgeInstanceState=false,AutoControllerIdentityCreator=true,BootstrapFormatIgnition=false,ExternalResourceGC=false
-        - --v=0
         - --metrics-bind-addr=127.0.0.1:8080
+        - --v=4
         env:
         - name: AWS_SHARED_CREDENTIALS_FILE
           value: /home/.aws/credentials

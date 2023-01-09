@@ -10293,6 +10293,7 @@ spec:
         - --leader-elect
         - --metrics-bind-addr=localhost:8080
         - --feature-gates=MachinePool=false,ClusterResourceSet=true,ClusterTopology=false,RuntimeSDK=false
+        - --v=4
         command:
         - /manager
         env:
@@ -17194,6 +17195,7 @@ spec:
         - --metrics-bind-addr=localhost:8080
         - --feature-gates=MachinePool=false,KubeadmBootstrapFormatIgnition=false
         - --bootstrap-token-ttl=15m
+        - --v=4
         command:
         - /manager
         image: registry.k8s.io/cluster-api/kubeadm-bootstrap-controller:v1.2.7
@@ -23730,6 +23732,7 @@ spec:
         - --leader-elect
         - --metrics-bind-addr=localhost:8080
         - --feature-gates=ClusterTopology=false,KubeadmBootstrapFormatIgnition=false
+        - --v=4
         command:
         - /manager
         env:
